@@ -1,0 +1,39 @@
+@import "variables";
+
+@mixin displayFlex() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin btnBlue() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 59px;
+  padding: 15px 30px;
+  border-radius: 5px;
+  background-color: $colorBlue;
+  font-size: 18px;
+  font-weight: 500;
+  color: $colorWhite;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    background-color: $colorBlueLight;
+    color: $colorBlue;
+  }
+}
+
+@mixin btnGrey() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 59px;
+  padding: 15px 30px;
+  border-radius: 5px;
+  background-color: $colorBlueLight;
+  font-size: 18px;
+  font-weight: 500;
+  color: $colorBlue;
+}
