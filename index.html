@@ -59,8 +59,9 @@
     </section>
     <section class="advantages">
         <div class="wrapper advantages__wrapper">
+            <img src="./img/advantages/cloud.png" alt="cloud" class="advantages__background">
             <div class="advantages__img-wrapper">
-                <img src="./img/advantages-image.png" alt="analysts">
+                <img src="./img/advantages/infograph.png" alt="analysts">
             </div>
             <div class="advantages__block">
                 <h2 class="advantages__title subtitle">It’s very helpful for operating system</h2>
@@ -132,7 +133,11 @@
             <h2 class="pricing__title subtitle">Choose your best pricing plan</h2>
             <div class="pricing__block-btn">
                 <span class="pricing__block-btn__text">Added for Monthly</span>
-                <input type="checkbox" class="pricing__block-btn__toggle">
+                <label class="switch">
+                    <input type="checkbox" class="switch__checkbox pricing__checkbox">
+                    <span class="switch__slider"></span>
+                </label>
+<!--                <input type="checkbox" class="pricing__block-btn__toggle">-->
                 <span class="pricing__block-btn__text blur">Yearly</span>
             </div>
             <ul class="pricing__list">
@@ -238,11 +243,113 @@
         <div class="wrapper news__wrapper">
             <h2 class="subtitle news__title">Lastest insights news</h2>
             <div class="news__block">
-
+                <div class="news__card">
+                    <img src="./img/news/news-1.png" alt="news image" class="news__card-img">
+                    <p class="news__card-department">Our Creative Team</p>
+                    <div class="news__card-author">
+                        <p class="news__author-text">17 June, 2021</p>
+                        <p class="news__author-text">by Stive Smithi</p>
+                    </div>
+                    <p class="news__card-title">Running remote offsites and onbordings</p>
+                    <p class="news__card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. At nullam elit
+                        enim eget at vitae pellen tesque malesuada et.</p>
+                    <a href="#" class="news__card-link">Continue</a>
+                </div>
+                <div class="news__card">
+                    <img src="./img/news/news-2.png" alt="news image" class="news__card-img">
+                    <p class="news__card-department">Create presentations</p>
+                    <div class="news__card-author">
+                        <p class="news__author-text">17 June, 2021</p>
+                        <p class="news__author-text">by Thomas lews</p>
+                    </div>
+                    <p class="news__card-title">A new look & new ways to collaborate</p>
+                    <p class="news__card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. At nullam elit
+                        enim eget at vitae pellen tesque malesuada et.</p>
+                    <a href="#" class="news__card-link">Continue</a>
+                </div>
             </div>
         </div>
     </section>
+    <footer class="footer">
+        <div class="wrapper footer-wrapper">
+            <div class="footer__top">
+                <div class="footer__block">
+                    <img src="./img/logo.svg" alt="codex logotype" class="footer__logo">
+                    <p class="footer__text footer__block-text">Lorem ipsum dolor sit amet, consect etur adipiscing elit.
+                        Ullamcorper purus eleifend purus faucibus faucibus.</p>
+                    <ul class="footer__social">
+                        <li class="footer__social-item">
+                            <a href="#" class="footer__social-link">
+                                <img src="./img/footer/twitter.png" alt="twitter icon" class="footer__list-img">
+                            </a>
+                        </li>
+                        <li class="footer__social-item">
+                            <a href="#" class="footer__social-link">
+                                <img src="./img/footer/facebook.png" alt="facebook icon" class="footer__list-img">
+                            </a>
+                        </li>
+                        <li class="footer__social-item">
+                            <a href="#" class="footer__social-link">
+                                <img src="./img/footer/instagram.png" alt="instagram icon" class="footer__list-img">
+                            </a>
+                        </li>
+                        <li class="footer__social-item">
+                            <a href="#" class="footer__social-link">
+                                <img src="./img/footer/linked-in.png" alt="linked-in icon" class="footer__list-img">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer_block">
+                    <p class="footer__block-title">Resources</p>
+                    <ul class="footer__list">
+                        <li class="footer__list-item">
+                            <a href="#" class="footer__list-link">Services</a>
+                        </li>
+                        <li class="footer__list-item">
+                            <a href="#" class="footer__list-link">Pricing</a>
+                        </li>
+                        <li class="footer__list-item">
+                            <a href="#" class="footer__list-link">Testimonials</a>
+                        </li>
+                        <li class="footer__list-item">
+                            <a href="#" class="footer__list-link">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer_block">
+                    <p class="footer__block-title">Usefull links</p>
+                    <ul class="footer__list">
+                        <li class="footer__list-item">
+                            <a href="#" class="footer__list-link">Terms of Services</a>
+                        </li>
+                        <li class="footer__list-item">
+                            <a href="#" class="footer__list-link">Privacy Policy</a>
+                        </li>
+                        <li class="footer__list-item">
+                            <a href="#" class="footer__list-link">Cookie Policy</a>
+                        </li>
+                        <li class="footer__list-item">
+                            <a href="#" class="footer__list-link">Contact us </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__block">
+                    <p class="footer__block-title">Newsletter</p>
+                    <p class="footer__text footer__block-text">Sign up and receive the lastest news via email.</p>
+                    <form class="footer__form">
+                        <input type="text" placeholder="Email addres" class="footer__form-text">
+                        <button class="footer__form-btn">Send</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer__line"></div>
+            <p class="footer__copy">Copyright 2021 The Codext  All Rights Reserved.</p>
+        </div>
+    </footer>
 </main>
 </body>
-<script src="./js/main.js"></script>
+<script type="module" src="./js/main.js"></script>
+<!--<script src="./js/header.js"></script>-->
+<!--<script src="./js/prices.js"></script>-->
 </html>
