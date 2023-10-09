@@ -39,6 +39,10 @@ body {
   color: $colorBlack;
 }
 
+body.lock {
+  overflow: hidden;
+}
+
 .btn-blue {
   @include btnBlue;
 }
@@ -70,7 +74,7 @@ body {
   padding: 5px;
   border-radius: 20px;
   cursor: pointer;
-  background-color: rgba(38, 87, 164, 0.2);
+  background-color: $colorBlueLight;
 }
 
 .switch__checkbox {
@@ -101,21 +105,24 @@ body {
   top: 0;
   left: 0;
   right: 0;
+  transition: all .2s ease-in-out;
+}
+
+.header.scroll {
+  background-color: rgba(255, 255, 255, .7);
 }
 
 .header__wrapper {
-  max-width: 1140px;
   height: 89px;
   margin: auto;
   @include displayFlex;
-}
-
-.header__wrapper.scroll {
-
+  gap: 10px;
+  transition: all .2s ease-in-out;
 }
 
 .header__logo {
   height: 51px;
+  cursor: pointer;
 }
 
 .header__menu {
@@ -159,6 +166,60 @@ body {
 
 .header__menu-btn {
   text-transform: uppercase;
+}
+
+.header__btn-menu {
+  position: relative;
+  display: none;
+  width: 35px;
+  height: 30px;
+
+  span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    border-radius: 4px;
+    background-color: $colorBlack;
+
+    &:nth-of-type(1) {
+      top: 0;
+      transition: top .15s .15s, transform .15s
+    }
+
+    &:nth-of-type(2) {
+      top: 45%;
+      transition: opacity .1s .15s;
+    }
+
+    &:nth-of-type(3) {
+      bottom: 0;
+      transition: bottom .15s .15s, transform .15s
+    }
+  }
+}
+
+.header__btn-menu.active {
+
+  span {
+    &:nth-of-type(1) {
+      top: 45%;
+      transform: rotate(45deg);
+      transition: transform .15s .15s, top .15s;
+    }
+
+    &:nth-of-type(2) {
+      opacity: 0;
+      transition: opacity .05s .15s;
+    }
+
+    &:nth-of-type(3) {
+      bottom: 45%;
+      transform: rotate(-45deg);
+      transition: transform .15s .15s, top .15s;
+    }
+  }
+
 }
 // header end
 
@@ -708,8 +769,12 @@ body {
 
 // footer start
 
+.footer {
+  background-color: $colorBlueLight;
+}
+
 .footer-wrapper {
-  padding-bottom: 35px;
+  padding: 100px 0 35px 0;
 }
 
 .footer__top {
@@ -762,8 +827,25 @@ body {
 }
 
 .footer__list-link {
+  position: relative;
   line-height: 160%;
   color: $colorGreyMain;
+
+  &:before {
+    content: '';
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    height: 1.5px;
+    opacity: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, $colorBlue 50%, rgba(255,255,255,0) 100%);
+  }
+
+  &:hover:before {
+    bottom: -5px;
+    opacity: 1;
+    transition: all .15s ease-in-out;
+  }
 }
 
 .footer__form {
@@ -814,3 +896,54 @@ body {
 // footer end
 
 // main end
+
+@media (max-width: 1250px) {
+  .wrapper {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 850px) {
+
+  .header {
+    background-color: $colorWhite;
+  }
+
+  .header__menu {
+    position: absolute;
+    top: 89px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: $colorWhite;
+    transition: all .2s ease-in-out;
+  }
+
+  .header__menu.active {
+    height: 100vh;
+    overflow: initial;
+  }
+
+  .header__nav {
+    flex-direction: column;
+  }
+
+  .header__nav-item {
+    margin-bottom: 30px;
+  }
+
+  .header__nav-link {
+    font-size: 32px;
+  }
+
+  .header__btn-menu {
+    display: block;
+  }
+}

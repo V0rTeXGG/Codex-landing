@@ -1,7 +1,11 @@
-import trackWindowScroll from "./header";
-import {yearPrice, monthPrice} from "./prices";
+import {trackWindowScroll, logoScrollTop, addClassMenuButton} from "./header.js"
+import {yearPrice, monthPrice} from "./prices.js";
 
-const header = document.querySelector('.header')
+const body = document.body;
+const nav = document.querySelector('.header__menu');
+const menuBtn = document.querySelector('.header__btn-menu')
+const header = document.querySelector('.header');
+const logo = document.querySelector('.header__logo');
 const prices = document.querySelectorAll('.pricing__list-price');
 const costsMonth = [10, 30, 49];
 const costsYear = [120, 360, 590];
@@ -22,7 +26,9 @@ toggleButton.addEventListener('change', function () {
 
 trackWindowScroll(header)
 
+addClassMenuButton(menuBtn, body, nav)
 
+logoScrollTop(logo)
 
 
 
