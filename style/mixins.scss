@@ -6,6 +6,12 @@
   align-items: center;
 }
 
+@mixin displayFlexMobile() {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @mixin btnBlue() {
   display: flex;
   justify-content: center;
