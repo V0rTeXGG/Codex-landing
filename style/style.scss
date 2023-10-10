@@ -378,7 +378,7 @@ body.lock {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 262px;
+  max-width: 260px;
   padding: 40px 25px;
   border-radius: 10px;
   box-shadow: 0 6px 50px 5px rgba(6, 14, 26, 0.05);
@@ -456,6 +456,7 @@ body.lock {
 
 .pricing__block-btn__text.blur {
   color: $colorGreyMain;
+  opacity: .7;
 }
 
 //
