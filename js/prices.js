@@ -1,6 +1,6 @@
 function yearPrice(price, costsYear, textPrice) {
     price.forEach((item, index) => {
-        item.textContent = `$${costsYear[index]}/mo`
+        item.textContent = `$${costsYear[index]}/year`
     })
     textPrice[textPrice.length-1].classList.remove('blur')
     textPrice[0].classList.add('blur')

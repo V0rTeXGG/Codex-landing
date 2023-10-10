@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500&display=swap"
           rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <link rel="icon" type="image/x-icon" href="">
 
     <link rel="stylesheet" href="style/style.css">
@@ -143,47 +143,52 @@
                 <!--                <input type="checkbox" class="pricing__block-btn__toggle">-->
                 <span class="pricing__block-btn__text blur">Yearly</span>
             </div>
-            <ul class="pricing__list">
-                <li class="pricing__list-item">
-                    <div class="pricing__list-background"></div>
-                    <div class="pricing__list-wrapper">
-                        <p class="pricing_list-name">Start-up</p>
-                        <img src="./img/card-line.png" alt="" class="pricing__list-line">
-                        <span class="pricing__list-price">$10/mo</span>
-                        <p class="pricing__list-text">Easy Customizable</p>
-                        <p class="pricing__list-text">Commercia license</p>
-                        <p class="pricing__list-text">Singal user license</p>
-                        <p class="pricing__list-text">Hotline support 24/7</p>
-                        <a href="" class="pricing__list-btn">TRY THIS PACKAGE</a>
-                    </div>
-                </li>
-                <li class="pricing__list-item">
-                    <div class="pricing__list-background"></div>
-                    <div class="pricing__list-wrapper">
-                        <p class="pricing_list-name">Start-up</p>
-                        <img src="./img/card-line.png" alt="" class="pricing__list-line">
-                        <span class="pricing__list-price">$10/mo</span>
-                        <p class="pricing__list-text">Easy Customizable</p>
-                        <p class="pricing__list-text">Commercia license</p>
-                        <p class="pricing__list-text">Singal user license</p>
-                        <p class="pricing__list-text">Hotline support 24/7</p>
-                        <a href="" class="pricing__list-btn">TRY THIS PACKAGE</a>
-                    </div>
-                </li>
-                <li class="pricing__list-item">
-                    <div class="pricing__list-background"></div>
-                    <div class="pricing__list-wrapper">
-                        <p class="pricing_list-name">Start-up</p>
-                        <img src="./img/card-line.png" alt="" class="pricing__list-line">
-                        <span class="pricing__list-price">$10/mo</span>
-                        <p class="pricing__list-text">Easy Customizable</p>
-                        <p class="pricing__list-text">Commercia license</p>
-                        <p class="pricing__list-text">Singal user license</p>
-                        <p class="pricing__list-text">Hotline support 24/7</p>
-                        <a href="" class="pricing__list-btn">TRY THIS PACKAGE</a>
-                    </div>
-                </li>
-            </ul>
+            <div class="swiper slider-prices">
+                <ul class="swiper-wrapper pricing__list">
+                    <li class="swiper-slide pricing__list-item">
+                        <div class="pricing__list-background"></div>
+                        <div class="pricing__list-wrapper">
+                            <p class="pricing_list-name">Start-up</p>
+                            <img src="./img/card-line.png" alt="" class="pricing__list-line">
+                            <span class="pricing__list-price">$10/mo</span>
+                            <p class="pricing__list-text">Easy Customizable</p>
+                            <p class="pricing__list-text">Commercia license</p>
+                            <p class="pricing__list-text">Singal user license</p>
+                            <p class="pricing__list-text">Hotline support 24/7</p>
+                            <a href="" class="pricing__list-btn">TRY THIS PACKAGE</a>
+                        </div>
+                    </li>
+                    <li class="swiper-slide pricing__list-item">
+                        <div class="pricing__list-background"></div>
+                        <div class="pricing__list-wrapper">
+                            <p class="pricing_list-name">Start-up</p>
+                            <img src="./img/card-line.png" alt="" class="pricing__list-line">
+                            <span class="pricing__list-price ">$10/mo</span>
+                            <p class="pricing__list-text">Easy Customizable</p>
+                            <p class="pricing__list-text">Commercia license</p>
+                            <p class="pricing__list-text">Singal user license</p>
+                            <p class="pricing__list-text">Hotline support 24/7</p>
+                            <a href="" class="pricing__list-btn">TRY THIS PACKAGE</a>
+                        </div>
+                    </li>
+                    <li class="swiper-slide pricing__list-item">
+                        <div class="pricing__list-background"></div>
+                        <div class="pricing__list-wrapper">
+                            <p class="pricing_list-name">Start-up</p>
+                            <img src="./img/card-line.png" alt="" class="pricing__list-line">
+                            <span class="pricing__list-price">$10/mo</span>
+                            <p class="pricing__list-text">Easy Customizable</p>
+                            <p class="pricing__list-text">Commercia license</p>
+                            <p class="pricing__list-text">Singal user license</p>
+                            <p class="pricing__list-text">Hotline support 24/7</p>
+                            <a href="" class="pricing__list-btn">TRY THIS PACKAGE</a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
     </section>
     <section class="users">
@@ -240,6 +245,59 @@
                 </div>
                 <img src="./img/users/user-background.png" alt="" class="users__block__background">
             </div>
+            <div class="swiper slider-users">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide users-slider__card">
+                        <img src="./img/users/user-america.png" alt="american user" class="users-slider__card-img">
+                        <div class="users-slider__card-block">
+                            <p class="users-slider__card-quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nulla scelerisque.</p>
+                            <p class="users-slider__card-name">Wilson Bergson</p>
+                            <p class="users-slider__card-post">Marketing manager</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide users-slider__card">
+                        <img src="./img/users/user-mexico.png" alt="mexico user" class="users-slider__card-img">
+                        <div class="users-slider__card-block">
+                            <p class="users-slider__card-quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nulla scelerisque.</p>
+                            <p class="users-slider__card-name">Wilson Bergson</p>
+                            <p class="users-slider__card-post">Marketing manager</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide users-slider__card">
+                        <img src="./img/users/user-emirates.png" alt="emirates user" class="users-slider__card-img">
+                        <div class="users-slider__card-block">
+                            <p class="users-slider__card-quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nulla scelerisque.</p>
+                            <p class="users-slider__card-name">Wilson Bergson</p>
+                            <p class="users-slider__card-post">Marketing manager</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide users-slider__card">
+                        <img src="./img/users/user-india.png" alt="india user" class="users-slider__card-img">
+                        <div class="users-slider__card-block">
+                            <p class="users-slider__card-quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nulla scelerisque.</p>
+                            <p class="users-slider__card-name">Wilson Bergson</p>
+                            <p class="users-slider__card-post">Marketing manager</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide users-slider__card">
+                        <img src="./img/users/user-australia.png" alt="australia user" class="users-slider__card-img">
+                        <div class="users-slider__card-block">
+                            <p class="users-slider__card-quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nulla scelerisque.</p>
+                            <p class="users-slider__card-name">Wilson Bergson</p>
+                            <p class="users-slider__card-post">Marketing manager</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
         </div>
     </section>
     <section class="news">
@@ -353,4 +411,6 @@
 </main>
 </body>
 <script type="module" src="./js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="js/swiper.js"></script>
 </html>

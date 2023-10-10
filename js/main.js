@@ -10,7 +10,13 @@ const prices = document.querySelectorAll('.pricing__list-price');
 const costsMonth = [10, 30, 49];
 const costsYear = [120, 360, 590];
 const toggleButton = document.querySelector('.pricing__checkbox')
-const textPrice = document.querySelectorAll('.pricing__block-btn__text')
+const textPrice = document.querySelectorAll('.pricing__block-btn__text');
+
+trackWindowScroll(header)
+
+addClassMenuButton(menuBtn, body, nav)
+
+logoScrollTop(logo)
 
 prices.forEach((item, index) => {
     item.textContent = `$${costsMonth[index]}/mo`
@@ -24,11 +30,7 @@ toggleButton.addEventListener('change', function () {
     }
 });
 
-trackWindowScroll(header)
 
-addClassMenuButton(menuBtn, body, nav)
-
-logoScrollTop(logo)
 
 
 
