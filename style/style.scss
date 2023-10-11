@@ -52,6 +52,9 @@ body.lock {
   font-size: 44px;
   font-weight: 600;
   line-height: 130%;
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: all .5s ease-in-out;
 }
 
 .wrapper {
@@ -106,7 +109,9 @@ body.lock {
   top: 0;
   left: 0;
   right: 0;
-  transition: all .2s ease-in-out;
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: opacity .5s ease-in-out, transform .5s ease-in-out, background-color .2s ease-in-out;
 }
 
 .header.scroll {
@@ -244,6 +249,9 @@ body.lock {
 .inner__block {
   max-width: 498px;
   min-width: 350px;
+  opacity: 0;
+  transform: translateX(-250px);
+  transition: all .5s ease-in-out;
 }
 
 .inner__title {
@@ -266,13 +274,22 @@ body.lock {
   max-width: 216px;
 }
 
-.inner__img-wrapper {
-  min-width: 450px;
+.inner__img {
+  min-width: 100px;
+  opacity: 0;
+  transform: translateX(250px);
+  transition: all .5s ease-in-out;
 }
 
 // inner end
 
 // advantages start
+
+.advantages__img-wrapper {
+  opacity: 0;
+  transform: translateX(-200px);
+  transition: all .5s ease-in-out;
+}
 
 .advantages {
   position: relative;
@@ -293,6 +310,9 @@ body.lock {
 
 .advantages__block {
   max-width: 416px;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all .5s ease-in-out;
 }
 
 .advantages__title {
@@ -372,6 +392,21 @@ body.lock {
   width: 265px;
   max-width: 265px;
   border-radius: 10px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all .5s ease-in-out;
+
+  &:nth-of-type(2) {
+    transition: all .5s .1s ease-in-out;
+  }
+
+  &:nth-of-type(3) {
+    transition: all .5s .2s ease-in-out;
+  }
+
+  &:nth-of-type(4) {
+    transition: all .5s .3s ease-in-out;
+  }
 }
 
 .feature__list-link {
@@ -438,13 +473,12 @@ body.lock {
 }
 
 .pricing__block-btn {
-  margin-bottom: 60px;
-}
-
-.pricing__block-btn {
   @include displayFlex;
   max-width: 373px;
   margin: 0 auto 60px auto;
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: all .5s ease-in-out;
 }
 
 .pricing__block-btn__text {
@@ -473,6 +507,17 @@ body.lock {
   align-items: center;
   width: 370px;
   box-shadow: 0 6px 50px 5px rgba(6, 14, 26, 0.05);
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all .5s ease-in-out;
+
+  &:nth-of-type(2) {
+    transition: all .5s .1s ease-in-out;
+  }
+
+  &:nth-of-type(3) {
+    transition: all .5s .2s ease-in-out;
+  }
 
   &:hover .pricing__list-background {
     opacity: 1;
@@ -484,7 +529,7 @@ body.lock {
     color: $colorWhite;
   }
 
-  &:hover .pricing__list-name{
+  &:hover .pricing__list-name {
     color: $colorWhite;
   }
 
@@ -622,7 +667,10 @@ body.lock {
   text-align: center;
   font-weight: 400;
   line-height: 160%;
+  opacity: 0;
+  transform: translateY(-100px);
   color: $colorGreyMain;
+  transition: all .5s ease-in-out;
 }
 
 .users__block {
@@ -639,29 +687,37 @@ body.lock {
   justify-content: space-between;
   align-items: center;
   max-height: 152px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all .6s ease-in-out;
 
   &:nth-of-type(2) {
     left: 28%;
     top: 52%;
+    transition: all .6s .1s ease-in-out;
   }
 
   &:nth-of-type(3) {
     left: 40%;
     top: 25%;
+    transition: all .6s .2s ease-in-out;
   }
 
   &:nth-of-type(3) .users__card-img {
     max-width: 84px;
+    transition: all .6s .3s ease-in-out;
   }
 
   &:nth-of-type(4) {
     left: 66%;
     top: 7%;
+    transition: all .6s .4s ease-in-out;
   }
 
   &:nth-of-type(5) {
     left: 74%;
     top: 52%;
+    transition: all .6s .5s ease-in-out;
   }
 }
 
@@ -779,7 +835,7 @@ body.lock {
 }
 
 .users-slider__card-img {
-  max-width: 100px;
+  max-width: 80px;
   margin-bottom: 30px;
 }
 
@@ -840,6 +896,13 @@ body.lock {
   display: flex;
   flex-direction: column;
   max-width: 555px;
+  opacity: 0;
+  transform: translateX(-250px);
+  transition: all .5s ease-in-out;
+
+  &:nth-of-type(2) {
+    transform: translateX(250px);
+  }
 }
 
 .news__card-img {
@@ -1028,6 +1091,12 @@ body.lock {
 
 // main end
 
+@media (max-width: 1920px) {
+  .users__card {
+
+  }
+}
+
 @media (max-width: 1240px) {
   .wrapper {
     padding: 0 10px;
@@ -1148,7 +1217,7 @@ body.lock {
       color: $colorWhite;
     }
 
-    &:hover .pricing__list-name{
+    &:hover .pricing__list-name {
       color: inherit;
     }
 
@@ -1254,11 +1323,9 @@ body.lock {
   .inner__block {
     @include displayFlexMobile;
     margin-bottom: 40px;
-  }
-
-  .inner__img-wrapper {
-    max-width: 650px;
-    min-width: 100px;
+    opacity: 0;
+    transform: translateX(-250px);
+    transition: all .5s ease-in-out;
   }
 
   .advantages__wrapper {
@@ -1313,6 +1380,11 @@ body.lock {
 }
 
 @media (max-width: 450px) {
+
+  .inner__title {
+    font-size: 35px;
+  }
+
   .subtitle {
     font-size: 30px;
   }

@@ -33,4 +33,24 @@ export function addClassMenuButton(button, body, nav) {
     })
 }
 
+export function navigationLinks() {
+    let links = document.querySelectorAll('.header__nav-link');
+
+    links.forEach(function(link) {
+        link.addEventListener("click", function(e) {
+            e.preventDefault();
+            let targetId = this.getAttribute("href").substring(1);
+            let targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                let offset = targetElement.getBoundingClientRect().top + window.scrollY - 150;
+                window.scrollTo({
+                    top: offset,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+}
+
 

@@ -1,4 +1,4 @@
-import {trackWindowScroll, logoScrollTop, addClassMenuButton} from "./header.js"
+import {trackWindowScroll, logoScrollTop, addClassMenuButton, navigationLinks} from "./header.js"
 import {yearPrice, monthPrice} from "./prices.js";
 
 const body = document.body;
@@ -12,11 +12,15 @@ const costsYear = costsMonth.map(item => (90 * (item * 12)) / 100)
 const toggleButton = document.querySelector('.pricing__checkbox')
 const textPrice = document.querySelectorAll('.pricing__block-btn__text');
 
+
+
 trackWindowScroll(header)
 
 addClassMenuButton(menuBtn, body, nav)
 
 logoScrollTop(logo)
+
+navigationLinks()
 
 prices.forEach((item, index) => {
     item.textContent = `$${costsMonth[index].toFixed(2)}/mo`
