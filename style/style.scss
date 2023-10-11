@@ -484,6 +484,17 @@ body.lock {
     color: $colorWhite;
   }
 
+  &:hover .pricing__list-name{
+    color: $colorWhite;
+  }
+
+  &:hover .pricing__list-price {
+    color: $colorWhite;
+  }
+
+  &:hover .pricing__list-wave {
+    transform: translateY(-11%) translateX(0%);
+  }
 }
 
 .pricing__list-background {
@@ -500,13 +511,32 @@ body.lock {
 }
 
 .pricing__list-wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 366px;
   padding: 50px 68px;
+  overflow: hidden;
   border-radius: 10px;
   background-color: $colorWhite;
+
+  .z-index {
+    z-index: 2;
+  }
+}
+
+.pricing__list-wave {
+  position: absolute;
+  z-index: 1;
+  top: -2px;
+  width: 838px;
+  height: 211px;
+  transform: translateY(-100%) translateX(-30%);
+  background: url("../img/wave.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all .2s ease-in-out;
 }
 
 .pricing__list-name {
@@ -515,6 +545,7 @@ body.lock {
   font-weight: 500;
   line-height: 150%;
   color: $colorGreyMain;
+  transition: all .2s ease-in-out;
 }
 
 .pricing__list-line {
@@ -526,6 +557,7 @@ body.lock {
   font-size: 32px;
   font-weight: 600;
   line-height: 140%;
+  transition: all .2s ease-in-out;
 }
 
 .pricing__list-text {
@@ -1097,12 +1129,46 @@ body.lock {
     box-shadow: none;
   }
 
+  //
+  .pricing__list-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 370px;
+    box-shadow: 0 6px 50px 5px rgba(6, 14, 26, 0.05);
+
+    &:hover .pricing__list-background {
+      opacity: 1;
+      bottom: -4px;
+    }
+
+    &:hover .pricing__list-btn {
+      background-color: $colorBlue;
+      color: $colorWhite;
+    }
+
+    &:hover .pricing__list-name{
+      color: inherit;
+    }
+
+    &:hover .pricing__list-price {
+      color: inherit;
+    }
+
+  }
+  //
+
   .pricing__list-background {
     display: none;
   }
 
   .pricing__list-name {
     font-size: 25px;
+  }
+
+  .pricing__list-wave {
+    display: none;
   }
 
   .pricing__list-price {

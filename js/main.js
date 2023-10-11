@@ -8,7 +8,6 @@ const header = document.querySelector('.header');
 const logo = document.querySelector('.header__logo');
 const prices = document.querySelectorAll('.pricing__list-price');
 const costsMonth = [10, 30, 49];
-// const costsYear = [120, 360, 590];
 const costsYear = costsMonth.map(item => (90 * (item * 12)) / 100)
 const toggleButton = document.querySelector('.pricing__checkbox')
 const textPrice = document.querySelectorAll('.pricing__block-btn__text');
