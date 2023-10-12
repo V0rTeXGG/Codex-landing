@@ -65,12 +65,9 @@ body.lock {
   font-size: 44px;
   font-weight: 600;
   line-height: 130%;
-
-  :not(:first-of-type) {
-    opacity: 0;
-    transform: translateY(-100px);
-    transition: all .5s ease-in-out;
-  }
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: all 0.5s ease-in-out;
 }
 
 .wrapper {
@@ -369,6 +366,9 @@ body.lock {
 
 .advantages__title {
   margin-bottom: 50px;
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 130%;
 }
 
 .advantages__list-item {

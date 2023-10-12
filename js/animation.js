@@ -3,6 +3,7 @@ const SERVICES_SCROLL_THRESHOLD = 1000;
 const PRICING_SCROLL_THRESHOLD = 1600;
 const FEATURE_SCROLL_THRESHOLD = 2400;
 const NEWS_SCROLL_THRESHOLD = 3400;
+let window_height = window.innerHeight;
 
 const HEADER = document.querySelector('.header')
 // inner
@@ -43,20 +44,20 @@ function handleScroll() {
     }
     if (scrollY > SERVICES_SCROLL_THRESHOLD) {
         SERVICES_ITEM.forEach(item => animateElementWithStyle(item, 'animate-translateY'));
-        SUBTITLES[1].classList.add('animate-translateY');
+        SUBTITLES[0].classList.add('animate-translateY');
     }
     if (scrollY > PRICING_SCROLL_THRESHOLD) {
-        SUBTITLES[2].classList.add('animate-translateY');
+        SUBTITLES[1].classList.add('animate-translateY');
         animateElementWithStyle(PRICES_BLOCK, 'animate-translateY');
         PRICES_ITEMS.forEach(item => animateElementWithStyle(item, 'animate-translateY'));
     }
     if (scrollY > FEATURE_SCROLL_THRESHOLD) {
-        SUBTITLES[3].classList.add('animate-translateY');
+        SUBTITLES[2].classList.add('animate-translateY');
         animateElementWithStyle(USERS_TEXT, 'animate-translateY');
         USERS.forEach(item => animateElementWithStyle(item, 'animate-translateY'));
     }
     if (scrollY > NEWS_SCROLL_THRESHOLD) {
-        SUBTITLES[4].classList.add('animate-translateY');
+        SUBTITLES[3].classList.add('animate-translateY');
         NEWS_CARDS.forEach(item => animateElementWithStyle(item, 'animate-translateX'));
     }
 }
@@ -70,3 +71,5 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('scroll', () => {
     requestAnimationFrame(handleScroll);
 });
+
+console.log(ADVANTAGES_IMG.getBoundingClientRect())
