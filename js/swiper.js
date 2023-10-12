@@ -11,7 +11,7 @@ if (window.innerWidth <= 980) {
         mousewheel: true,
         keyboard: true,
     });
-};
+}
 
 {
     const swiper = new Swiper(".slider-users", {

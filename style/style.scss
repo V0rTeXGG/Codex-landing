@@ -231,7 +231,7 @@ body.lock {
     }
 
     &:nth-of-type(3) {
-      bottom: 0;
+      bottom: 1px;
       transition: bottom .15s .15s, transform .15s
     }
   }
@@ -1378,6 +1378,7 @@ body.lock {
 
   .header__menu.active {
     height: 100vh;
+    padding-top: 40px;
     overflow: initial;
   }
 
@@ -1428,6 +1429,14 @@ body.lock {
 }
 
 @media (max-width: 650px) {
+
+  .header__wrapper {
+    height: 70px;
+  }
+
+  .header__menu {
+    top: 70px;
+  }
 
   .news__block {
     display: flex;
