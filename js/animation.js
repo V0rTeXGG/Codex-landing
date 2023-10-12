@@ -1,67 +1,72 @@
-const styleAnimation = 'opacity: 1; transform: translateY(0)';
+const ADVANTAGES_SCROLL_THRESHOLD = 150;
+const SERVICES_SCROLL_THRESHOLD = 1000;
+const PRICING_SCROLL_THRESHOLD = 1600;
+const FEATURE_SCROLL_THRESHOLD = 2400;
+const NEWS_SCROLL_THRESHOLD = 3400;
 
-
-const header = document.querySelector('.header')
+const HEADER = document.querySelector('.header')
 // inner
-const innerImg = document.querySelector('.inner__img')
-const innerBlock = document.querySelector('.inner__block')
+const INNER_IMG = document.querySelector('.inner__img')
+const INNER_BLOCK = document.querySelector('.inner__block')
 
-const subtitles = document.querySelectorAll('.subtitle')
+const SUBTITLES = document.querySelectorAll('.subtitle')
 // advantages
-const advantagesImg = document.querySelector('.advantages__img-wrapper');
-const advantagesBlock = document.querySelector('.advantages__block');
+const ADVANTAGES_IMG = document.querySelector('.advantages__img-wrapper');
+const ADVANTAGES_BLOCK = document.querySelector('.advantages__block');
 
-// feature
-const featuresItems = document.querySelectorAll('.feature__list-item');
+// services
+const SERVICES_ITEM = document.querySelectorAll('.services__list-item');
 
 
 // prices
-const pricingBlock = document.querySelector('.pricing__block-btn ');
-const pricesItems = document.querySelectorAll('.pricing__list-item')
+const PRICES_BLOCK = document.querySelector('.pricing__block-btn ');
+const PRICES_ITEMS = document.querySelectorAll('.pricing__list-item')
 
 // users
-const featureTitle = document.querySelector('.feature__title');
-const featureText = document.querySelector('.users__text')
-const featureUsers = document.querySelectorAll('.users__card')
+const USERS_TEXT = document.querySelector('.users__text')
+const USERS = document.querySelectorAll('.users__card')
 
 // news
-const newsItems = document.querySelectorAll('.news__card')
+const NEWS_CARDS = document.querySelectorAll('.news__card')
+
+function animateElementWithStyle(element, styleClass) {
+    element.classList.add(styleClass);
+}
+
+// Функция для проверки и запуска анимаций при прокрутке
+function handleScroll() {
+    const scrollY = window.scrollY;
+
+    if (scrollY > ADVANTAGES_SCROLL_THRESHOLD) {
+        animateElementWithStyle(ADVANTAGES_IMG, 'animate-translateX');
+        animateElementWithStyle(ADVANTAGES_BLOCK, 'animate-translateX');
+    }
+    if (scrollY > SERVICES_SCROLL_THRESHOLD) {
+        SERVICES_ITEM.forEach(item => animateElementWithStyle(item, 'animate-translateY'));
+        SUBTITLES[1].classList.add('animate-translateY');
+    }
+    if (scrollY > PRICING_SCROLL_THRESHOLD) {
+        SUBTITLES[2].classList.add('animate-translateY');
+        animateElementWithStyle(PRICES_BLOCK, 'animate-translateY');
+        PRICES_ITEMS.forEach(item => animateElementWithStyle(item, 'animate-translateY'));
+    }
+    if (scrollY > FEATURE_SCROLL_THRESHOLD) {
+        SUBTITLES[3].classList.add('animate-translateY');
+        animateElementWithStyle(USERS_TEXT, 'animate-translateY');
+        USERS.forEach(item => animateElementWithStyle(item, 'animate-translateY'));
+    }
+    if (scrollY > NEWS_SCROLL_THRESHOLD) {
+        SUBTITLES[4].classList.add('animate-translateY');
+        NEWS_CARDS.forEach(item => animateElementWithStyle(item, 'animate-translateX'));
+    }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
-    innerBlock.style = 'opacity: 1; transform: translateX(0)';
-    innerImg.style = 'opacity: 1; transform: translateX(0)';
-    header.style = styleAnimation;
-})
+    INNER_BLOCK.classList.add('animate-translateX');
+    INNER_IMG.classList.add('animate-translateX');
+    HEADER.classList.add('animate-translateY');
+});
 
-window.addEventListener('scroll', function() {
-    if(window.scrollY > 150) {
-        advantagesImg.style = 'opacity: 1; transform: translateX(0)';
-        advantagesBlock.style = 'opacity: 1; transform: translateX(0)'
-    }
-    if(window.scrollY > 1000) {
-        featuresItems.forEach(item => {
-            item.style = styleAnimation
-        });
-        subtitles[1].style = styleAnimation;
-    }
-    if(window.scrollY > 1600) {
-        subtitles[2].style = styleAnimation;
-        pricingBlock.style = styleAnimation;
-        pricesItems.forEach(item => {
-            item.style = styleAnimation
-        });
-    }
-    if(window.scrollY > 2400) {
-        subtitles[3].style = styleAnimation;
-        featureText.style = styleAnimation;
-        featureUsers.forEach(item => {
-            item.style = styleAnimation
-        });
-    }
-    if(window.scrollY > 3400) {
-        subtitles[4].style = styleAnimation;
-        newsItems.forEach(item => {
-            item.style = 'opacity: 1; transform: translateX(0)';
-        });
-    }
+window.addEventListener('scroll', () => {
+    requestAnimationFrame(handleScroll);
 });

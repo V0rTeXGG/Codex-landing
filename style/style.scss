@@ -44,6 +44,19 @@ body.lock {
   overflow: hidden;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $colorGreyLight;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #2657A4;
+}
+
 .btn-blue {
   @include btnBlue;
 }
@@ -52,9 +65,12 @@ body.lock {
   font-size: 44px;
   font-weight: 600;
   line-height: 130%;
-  opacity: 0;
-  transform: translateY(-100px);
-  transition: all .5s ease-in-out;
+
+  :not(:first-of-type) {
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: all .5s ease-in-out;
+  }
 }
 
 .wrapper {
@@ -101,6 +117,17 @@ body.lock {
   transform: translateX(35px);
 }
 
+
+.animate-translateY {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-translateX {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 // header start
 
 .header {
@@ -112,6 +139,11 @@ body.lock {
   opacity: 0;
   transform: translateY(-100px);
   transition: opacity .5s ease-in-out, transform .5s ease-in-out, background-color .2s ease-in-out;
+}
+
+.header.animate-translateY {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .header.scroll {
@@ -236,7 +268,7 @@ body.lock {
 
 .inner {
   padding: 177px 0 80px 0;
-  background-image: url("../img/inner-background.png");
+  background-image: url("../img/inner/inner-background.png");
   background-size: cover;
   margin-bottom: 140px;
 }
@@ -252,6 +284,11 @@ body.lock {
   opacity: 0;
   transform: translateX(-250px);
   transition: all .5s ease-in-out;
+}
+
+.inner__block.animate-translateX {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .inner__title {
@@ -281,6 +318,11 @@ body.lock {
   transition: all .5s ease-in-out;
 }
 
+.inner__img.animate-translateX {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 // inner end
 
 // advantages start
@@ -289,6 +331,11 @@ body.lock {
   opacity: 0;
   transform: translateX(-200px);
   transition: all .5s ease-in-out;
+}
+
+.advantages__img-wrapper.animate-translateX {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .advantages {
@@ -315,6 +362,11 @@ body.lock {
   transition: all .5s ease-in-out;
 }
 
+.advantages__block.animate-translateX {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .advantages__title {
   margin-bottom: 50px;
 }
@@ -334,20 +386,20 @@ body.lock {
     top: 7px;
     width: 24px;
     height: 22px;
-    background-image: url("../img/arror-list.png");
+    background-image: url("../img/advantages/arrow-list.png");
     background-position: center;
     background-repeat: no-repeat;
   }
 
   &:nth-child(2) {
     &:before {
-      background-image: url("../img/arrow-list-1.png");
+      background-image: url("../img/advantages/arrow-list-1.png");
     }
   }
 
   &:nth-child(3) {
     &:before {
-      background-image: url("../img/arrow-list-2.png");
+      background-image: url("../img/advantages/arrow-list-2.png");
     }
   }
 }
@@ -366,26 +418,26 @@ body.lock {
 
 // advantages end
 
-// feature start
+// services start
 
-.feature {
+.services {
   margin-bottom: 200px;
 }
 
-.feature__title {
+.services__title {
   max-width: 549px;
   margin: 0 auto 60px auto;
   text-align: center;
 }
 
-.feature__list {
+.services__list {
   position: relative;
   @include displayFlex;
   gap: 10px;
   margin: auto;
 }
 
-.feature__list-item {
+.services__list-item {
   display: flex;
   justify-content: center;
   position: relative;
@@ -409,7 +461,12 @@ body.lock {
   }
 }
 
-.feature__list-link {
+.services__list-item.animate-translateY {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.services__list-link {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -421,12 +478,12 @@ body.lock {
   transition: all .2s ease-in-out;
 }
 
-.feature__list-link:hover .feature__list-item__background {
+.services__list-link:hover .services__list-item__background {
   bottom: -4px;
   opacity: 1;
 }
 
-.feature__list-item__background {
+.services__list-item__background {
   z-index: -1;
   position: absolute;
   left: 0;
@@ -440,18 +497,18 @@ body.lock {
   transition: bottom .2s ease-in-out, opacity .2s ease-in-out;
 }
 
-.feature__list-img {
+.services__list-img {
   margin-bottom: 50px;
 }
 
-.feature__list-title {
+.services__list-title {
   margin-bottom: 10px;
   font-size: 25px;
   font-weight: 500;
   line-height: 150%;
 }
 
-.feature__list-text {
+.services__list-text {
   margin-bottom: 20px;
   text-align: center;
   font-size: 14px;
@@ -459,7 +516,7 @@ body.lock {
   color: $colorGreyMain;
 }
 
-// feature end
+// services end
 
 //pricing start
 
@@ -479,6 +536,11 @@ body.lock {
   opacity: 0;
   transform: translateY(-100px);
   transition: all .5s ease-in-out;
+}
+
+.pricing__block-btn.animate-translateY {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .pricing__block-btn__text {
@@ -542,6 +604,11 @@ body.lock {
   }
 }
 
+.pricing__list-item.animate-translateY {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .pricing__list-background {
   z-index: -1;
   position: absolute;
@@ -578,7 +645,7 @@ body.lock {
   width: 838px;
   height: 211px;
   transform: translateY(-100%) translateX(-30%);
-  background: url("../img/wave.png");
+  background: url("../img/prices/wave.png");
   background-position: center;
   background-repeat: no-repeat;
   transition: all .2s ease-in-out;
@@ -673,6 +740,11 @@ body.lock {
   transition: all .5s ease-in-out;
 }
 
+.users__text.animate-translateY {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .users__block {
   position: relative;
   overflow: visible;
@@ -719,6 +791,11 @@ body.lock {
     top: 52%;
     transition: all .6s .5s ease-in-out;
   }
+}
+
+.users__card.animate-translateY {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .users__card-img {
@@ -903,6 +980,11 @@ body.lock {
   &:nth-of-type(2) {
     transform: translateX(250px);
   }
+}
+
+.news__card.animate-translateX {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .news__card-img {
@@ -1153,7 +1235,7 @@ body.lock {
     font-size: 50px;
   }
 
-  .feature__list {
+  .services__list {
     display: grid;
     grid-template-columns: repeat(2, minmax(200px, 262px));
     max-width: 550px;
@@ -1323,9 +1405,6 @@ body.lock {
   .inner__block {
     @include displayFlexMobile;
     margin-bottom: 40px;
-    opacity: 0;
-    transform: translateX(-250px);
-    transition: all .5s ease-in-out;
   }
 
   .advantages__wrapper {
@@ -1368,7 +1447,7 @@ body.lock {
     font-size: 40px;
   }
 
-  .feature__list {
+  .services__list {
     grid-template-columns: repeat(1, minmax(200px, 262px));
     justify-content: center;
   }

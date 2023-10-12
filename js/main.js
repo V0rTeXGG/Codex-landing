@@ -12,8 +12,6 @@ const costsYear = costsMonth.map(item => (90 * (item * 12)) / 100)
 const toggleButton = document.querySelector('.pricing__checkbox')
 const textPrice = document.querySelectorAll('.pricing__block-btn__text');
 
-
-
 trackWindowScroll(header)
 
 addClassMenuButton(menuBtn, body, nav)
@@ -25,6 +23,8 @@ navigationLinks()
 prices.forEach((item, index) => {
     item.textContent = `$${costsMonth[index].toFixed(2)}/mo`
 })
+
+console.log(prices)
 
 toggleButton.addEventListener('change', function () {
     if (this.checked) {
