@@ -1,5 +1,3 @@
-import ScrollMagic from 'scrollmagic';
-import { TweenMax, Power2, TimelineLite } from 'gsap';
 
 document.addEventListener('DOMContentLoaded', function () {
     const HEADER = document.querySelector('.header')
