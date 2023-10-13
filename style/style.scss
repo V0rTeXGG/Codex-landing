@@ -1173,9 +1173,47 @@ body.lock {
 
 // main end
 
-@media (max-width: 1920px) {
+@media (min-width: 1728px) {
   .users__card {
+    left: 10%;
 
+    &:nth-of-type(2) {
+      left: 18%;
+    }
+
+    &:nth-of-type(3) {
+      left: 30%;
+    }
+
+    &:nth-of-type(4) {
+      left: 56%;
+    }
+
+    &:nth-of-type(5) {
+      left: 64%;
+    }
+  }
+}
+
+@media (min-width: 1728px) {
+  .users__card {
+    left: 25%;
+
+    &:nth-of-type(2) {
+      left: 23%;
+    }
+
+    &:nth-of-type(3) {
+      left: 35%;
+    }
+
+    &:nth-of-type(4) {
+      left: 61%;
+    }
+
+    &:nth-of-type(5) {
+      left: 69%;
+    }
   }
 }
 
@@ -1212,6 +1250,7 @@ body.lock {
   }
 
   .users__card-quote {
+    font-size: 10px;
     &:before {
       left: 0;
     }

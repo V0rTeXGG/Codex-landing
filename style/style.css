@@ -1144,6 +1144,40 @@ body.lock {
   color: #51565E;
 }
 
+@media (min-width: 1728px) {
+  .users__card {
+    left: 10%;
+  }
+  .users__card:nth-of-type(2) {
+    left: 18%;
+  }
+  .users__card:nth-of-type(3) {
+    left: 30%;
+  }
+  .users__card:nth-of-type(4) {
+    left: 56%;
+  }
+  .users__card:nth-of-type(5) {
+    left: 64%;
+  }
+}
+@media (min-width: 1728px) {
+  .users__card {
+    left: 25%;
+  }
+  .users__card:nth-of-type(2) {
+    left: 23%;
+  }
+  .users__card:nth-of-type(3) {
+    left: 35%;
+  }
+  .users__card:nth-of-type(4) {
+    left: 61%;
+  }
+  .users__card:nth-of-type(5) {
+    left: 69%;
+  }
+}
 @media (max-width: 1240px) {
   .wrapper {
     padding: 0 10px;
@@ -1168,6 +1202,9 @@ body.lock {
   .users__card-block {
     max-width: 273px;
     padding: 35px 24px 10px 24px;
+  }
+  .users__card-quote {
+    font-size: 10px;
   }
   .users__card-quote:before {
     left: 0;
