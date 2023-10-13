@@ -1,5 +1,4 @@
-
-document.addEventListener('DOMContentLoaded', function () {
+export function initializationAnimation() {
     const HEADER = document.querySelector('.header')
     const INNER_IMG = document.querySelector('.inner__img')
     const INNER_BLOCK = document.querySelector('.inner__block')
@@ -8,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const PRICES_ITEMS = document.querySelectorAll('.pricing__list-item')
     const USERS = document.querySelectorAll('.users__card')
     const NEWS_CARDS = document.querySelectorAll('.news__card')
+
     const controller = new ScrollMagic.Controller();
 
     INNER_BLOCK.classList.add('animate-translateX');
@@ -109,7 +109,8 @@ document.addEventListener('DOMContentLoaded', function () {
             .addTo(controller);
     });
 
-});
+}
+
 
 
 

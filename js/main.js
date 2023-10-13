@@ -1,5 +1,7 @@
 import {trackWindowScroll, logoScrollTop, MobileMenu, navigationLinks} from "./header.js"
 import {yearPrice, monthPrice} from "./prices.js";
+import {initializationSliderPrices, initializationSliderUsers} from "./swiper.js";
+import {initializationAnimation} from "./animation.js"
 
 
 const HEADER_LINKS = document.querySelectorAll('.header__nav-link');
@@ -11,7 +13,7 @@ const COSTS_MONTH = [10, 30, 49];
 const COSTS_YEAR = COSTS_MONTH.map(item => (90 * (item * 12)) / 100)
 const TOGGLE_BUTTON = document.querySelector('.pricing__checkbox')
 const TEXT_PRICE = document.querySelectorAll('.pricing__block-btn__text');
-
+initializationAnimation()
 trackWindowScroll(HEADER)
 
 MobileMenu()
@@ -21,11 +23,15 @@ logoScrollTop(LOGO)
 navigationLinks(HEADER_LINKS)
 navigationLinks(FOOTER_LINKS)
 
+if(window.innerWidth <= 980) {
+    initializationSliderPrices()
+}
+
+initializationSliderUsers()
+
 PRICES.forEach((item, index) => {
     item.textContent = `$${COSTS_MONTH[index].toFixed(2)}/mo`
 })
-
-console.log(PRICES)
 
 TOGGLE_BUTTON.addEventListener('change', function () {
     if (this.checked) {

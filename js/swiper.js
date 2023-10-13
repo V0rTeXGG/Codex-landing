@@ -1,4 +1,4 @@
-if (window.innerWidth <= 980) {
+export function initializationSliderPrices() {
     const swiper = new Swiper('.slider-prices', {
         cssMode: true,
         navigation: {
@@ -13,7 +13,7 @@ if (window.innerWidth <= 980) {
     });
 }
 
-{
+export function initializationSliderUsers() {
     const swiper = new Swiper(".slider-users", {
         cssMode: true,
         navigation: {
