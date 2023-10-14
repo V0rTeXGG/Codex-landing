@@ -1144,7 +1144,7 @@ body.lock {
   color: #51565E;
 }
 
-@media (min-width: 1728px) {
+@media (min-width: 1800px) {
   .users__card {
     left: 10%;
   }
@@ -1163,19 +1163,19 @@ body.lock {
 }
 @media (min-width: 1728px) {
   .users__card {
-    left: 25%;
+    left: 13%;
   }
   .users__card:nth-of-type(2) {
-    left: 23%;
+    left: 21%;
   }
   .users__card:nth-of-type(3) {
-    left: 35%;
+    left: 33%;
   }
   .users__card:nth-of-type(4) {
-    left: 61%;
+    left: 59%;
   }
   .users__card:nth-of-type(5) {
-    left: 69%;
+    left: 67%;
   }
 }
 @media (max-width: 1240px) {
